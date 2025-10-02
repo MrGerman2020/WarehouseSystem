@@ -13,6 +13,6 @@
 - [Диаграмма последовательности](docs/sequence-diagram.png)
 
 ## Установка и запуск
-1. Склонировать: `git clone https://gitlab.com/username/WarehouseSystem.git`
+1. Склонировать: `git clone https://gitlab.com/MrGerman2020/WarehouseSystem.git`
 2. Установить зависимости: `dotnet add package System.Data.SQLite`
 3. Запустить: `dotnet run`
