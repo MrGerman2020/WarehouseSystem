@@ -4,6 +4,9 @@ using WarehouseSystem.Services;
 
 namespace WarehouseSystem
 {
+    /// <summary>
+    /// Main entry point for the WarehouseSystem console application.
+    /// </summary>
     class Program
     {
         static void Main()
