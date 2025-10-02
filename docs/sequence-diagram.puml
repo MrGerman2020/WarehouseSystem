@@ -1,0 +1,21 @@
+@startuml
+actor User
+participant Program
+participant WarehouseService
+participant ProductRepository
+participant Product
+participant Database
+
+User -> Program: Select "Add product"
+Program -> User: Request name, category, price
+User -> Program: Input name, category, price
+Program -> WarehouseService: AddProduct(name, category, price)
+WarehouseService -> Product: new Product(0, name, category, price)
+WarehouseService -> ProductRepository: AddProduct(product)
+ProductRepository -> Database: INSERT INTO Products
+Database --> ProductRepository: Success
+ProductRepository --> WarehouseService: Success
+WarehouseService --> Program: Success
+Program --> User: Confirmation
+
+@enduml

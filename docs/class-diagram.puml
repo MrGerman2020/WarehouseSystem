@@ -1,0 +1,34 @@
+@startuml
+package "WarehouseSystem" {
+  class Product {
+    +int Id
+    +string Name
+    +string Category
+    +double Price
+    +Product(id: int, name: string, category: string, price: double)
+  }
+
+  class ProductRepository {
+    -string _connectionString
+    +ProductRepository()
+    +AddProduct(product: Product)
+    +GetAllProducts(): List<Product>
+    -InitializeDatabase()
+  }
+
+  class WarehouseService {
+    -ProductRepository _repository
+    +WarehouseService(repository: ProductRepository)
+    +AddProduct(name: string, category: string, price: double)
+    +GetAllProducts(): List<Product>
+  }
+
+  class Program {
+    +Main()
+  }
+
+  Program --> WarehouseService
+  WarehouseService --> ProductRepository
+  ProductRepository --> Product
+}
+@enduml
